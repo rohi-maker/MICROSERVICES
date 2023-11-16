@@ -1,25 +1,7 @@
-#spring:
-#  cloud:
-#    gateway:
-#      discovery:
-#        locator:
-#          enabled: true
-#      routes:
-#        - id: MICROSERVICE-A
-#          uri: lb://MICROSERVICE-A
-#          predicates:
-#            - Path=/a/demo
-#        - id: MICROSERVICE-B
-#          uri: lb://MICROSERVICE-B
-#          predicates:
-#            - Path=/b/demo
-
-
-
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://microservice-eureka-server:8761/eureka
 
 
   instance:

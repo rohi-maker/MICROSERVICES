@@ -13,7 +13,7 @@ public class MicroserviceBHttpClientConfig {
     @Bean
     public WebClient BMicroserviceWebClient() {
         return WebClient.builder().
-                baseUrl("http://localhost:8082").
+                baseUrl("http://microservice-b:8082").
                 build();
     }
 

@@ -1,0 +1,39 @@
+version: '2.2'
+services:
+  config-server:
+    image: config-server
+    ports:
+      - "9999:9999"
+    networks:
+      - microservice-network
+
+  microservice-eureka-server:
+    image: microservice-eureka-server
+    ports:
+      - "8761:8761"
+    networks:
+      - microservice-network
+
+  microservice-a:
+    image: microservice-a
+    ports:
+      - "8081:8081"
+    networks:
+      - microservice-network
+    depends_on:
+      - config-server
+      - microservice-eureka-server
+
+  microservice-b:
+    image: microservice-b
+    ports:
+      - "8082:8082"
+    networks:
+      - microservice-network
+    depends_on:
+      - config-server
+      - microservice-eureka-server
+
+networks:
+  microservice-network:
+    driver: bridge
