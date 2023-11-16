@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: MICROSERVICE-A
+  config:
+    import: "optional:configserver:http://localhost:9999"
+
+
